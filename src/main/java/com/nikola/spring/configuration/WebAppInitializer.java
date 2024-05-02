@@ -1,4 +1,4 @@
-package com.nikola.spring.configuration.configuration;
+package com.nikola.spring.configuration;
 
 import jakarta.servlet.MultipartConfigElement;
 import jakarta.servlet.ServletContext;

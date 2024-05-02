@@ -1,4 +1,4 @@
-package com.nikola.spring.configuration.configuration;
+package com.nikola.spring.configuration;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
