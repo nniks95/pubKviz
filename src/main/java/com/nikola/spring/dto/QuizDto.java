@@ -1,6 +1,8 @@
 package com.nikola.spring.dto;
 
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -12,13 +14,15 @@ public class QuizDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Integer id;
+    @NotEmpty
+    @Size(min = 3, max = 40)
+    private String name;
     @NotNull
     private List<Integer> teamIds;
     @NotNull
     private Integer slots;
     @NotNull
     private List<Integer> rewardsIds;
-    @NotNull
     private List<Integer> questionsIds;
     private String createTime;
     private String updateTime;
@@ -78,5 +82,13 @@ public class QuizDto implements Serializable {
 
     public void setTeamIds(List<Integer> teamIds) {
         this.teamIds = teamIds;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -21,9 +21,7 @@ public class TeamDto implements Serializable {
     private Integer points;
     @NotNull
     private Integer quizId;
-    @NotNull
     private List<Integer> playersIds;
-    @NotNull
     private List<Integer> questionsIds;
 
 

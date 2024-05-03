@@ -18,6 +18,7 @@ public class RewardDto implements Serializable {
     private String rewardName;
     @NotNull
     private Integer rewardPlace;
+    @NotNull
     private Integer quizId;
 
     public Integer getId() {

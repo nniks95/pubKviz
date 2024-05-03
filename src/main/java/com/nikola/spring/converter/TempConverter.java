@@ -1,4 +1,4 @@
-package com.nikola.spring.tempConverter;
+package com.nikola.spring.converter;
 
 
 import com.nikola.spring.dto.*;

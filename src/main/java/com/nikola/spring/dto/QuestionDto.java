@@ -20,7 +20,6 @@ public class QuestionDto implements Serializable {
     @NotNull
     private Integer points;
     private Integer quizId;
-    @NotNull
     private List<Integer> teamsIds;
 
     public Integer getId() {

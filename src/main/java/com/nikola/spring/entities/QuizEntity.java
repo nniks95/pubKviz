@@ -21,6 +21,9 @@ public class QuizEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(length = 40, nullable = false)
+    private String name;
+
     @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "quiz")
     private List<TeamEntity> teams;
 
@@ -95,5 +98,13 @@ public class QuizEntity implements Serializable {
 
     public void setUpdateTime(Timestamp updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
