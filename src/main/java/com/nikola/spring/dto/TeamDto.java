@@ -14,17 +14,18 @@ public class TeamDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Integer id;
+    @NotEmpty
+    @Size(min = 2,max = 60)
+    private String name;
+    @NotNull
+    private Integer points;
     @NotNull
     private Integer quizId;
     @NotNull
     private List<Integer> playersIds;
     @NotNull
     private List<Integer> questionsIds;
-    @NotEmpty
-    @Size(min = 2,max = 60)
-    private String name;
-    @NotNull
-    private Integer points;
+
 
     public Integer getId() {
         return id;

@@ -17,6 +17,12 @@ public class TeamEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(length = 60, nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private Integer points;
+
     @ManyToOne
     @JoinColumn(nullable = false, name = "quiz_id")
     private QuizEntity quiz;
@@ -29,11 +35,7 @@ public class TeamEntity implements Serializable {
     @JoinTable(name = "teams_question", joinColumns = @JoinColumn(name = "team_id"), inverseJoinColumns = @JoinColumn(name = "question_id"))
     private List<QuestionEntity> correctQuestions;
 
-    @Column(length = 60, nullable = false)
-    private String name;
 
-    @Column(nullable = false)
-    private Integer points;
 
     public Integer getId() {
         return id;
