@@ -63,10 +63,7 @@ public class QuizServiceImpl implements QuizService {
         QuizEntity currentQuiz = quizRepository.findById(quizId).orElseThrow(()->new InstanceUndefinedException(new Error("Quiz has not been found.")));
         QuizEntity quiz = tempConverter.dtoToEntity(quizDto);
         quiz.setName(currentQuiz.getName());
-        quiz.setRewards(currentQuiz.getRewards());
-        quiz.setQuestions(currentQuiz.getQuestions());
         quiz.setId(currentQuiz.getId());
-        quiz.setTeams(currentQuiz.getTeams());
         quiz.setCreateTime(currentQuiz.getCreateTime());
         quiz.setSlots(currentQuiz.getSlots());
         QuizEntity updateQuiz = quizRepository.saveAndFlush(quiz);
@@ -95,6 +92,7 @@ public class QuizServiceImpl implements QuizService {
             TeamDto teamDto = teamService.getTeamById(teamId);
             if(teamDto != null){
                 teams.add(tempConverter.dtoToEntity(teamDto));
+                
             }
         }
         quiz.setTeams(teams);

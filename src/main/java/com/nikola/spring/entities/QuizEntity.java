@@ -24,16 +24,16 @@ public class QuizEntity implements Serializable {
     @Column(length = 40, nullable = false)
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "quiz")
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "quiz", cascade = {CascadeType.ALL})
     private List<TeamEntity> teams;
 
     @Column(nullable = false, length = 10)
     private Integer slots;
 
-    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "quiz")
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "quiz",cascade = {CascadeType.ALL})
     private List<RewardEntity> rewards;
 
-    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "question")
+    @OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "question",cascade = {CascadeType.ALL})
     private List<QuestionEntity> questions;
 
     @CreationTimestamp
